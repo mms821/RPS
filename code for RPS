@@ -1,0 +1,65 @@
+package GAMES;
+
+import java.util.Scanner;
+
+public class RPS {
+	
+public static void main(String[] args) {
+	
+	
+	RPS gg = new RPS();
+	
+	
+				
+	for(int i = 0, j = 0; i < 2 || j < 2;) {
+		
+		if(i == 2) {
+			System.out.println("GAME WON");
+			break;
+		} else if (j == 2) {
+			System.out.println("GAME LOST");
+			break;
+		}
+		
+		int foe = gg.randomNumber();
+	
+	Scanner scanner = new Scanner(System.in);		
+	System.out.println("Please type either 1 for rock, 2 for paper, or 3 for scissors.");
+	
+	int line = scanner.nextInt();
+		
+		if (line == foe) {
+			System.out.println("TIE");
+		} else if (line == 1 && foe == 2){
+			System.out.println("ROCK VS PAPER: ROUND LOST");
+			j++;
+		} else if (line == 1 && foe == 3){
+			System.out.println("ROCK VS SCISSORS: ROUND WON");
+			i++;
+		} else if (line == 2 && foe == 3){
+			System.out.println("PAPER VS SCISSORS: ROUND LOST");
+			j++;
+		} else if (line == 2 && foe == 1){
+			System.out.println("PAPER VS ROCK: ROUND WON");
+			i++;
+		} else if (line == 3 && foe == 2){
+			System.out.println("SCISSORS VS PAPER: ROUND WON");
+			i++;
+		} else if (line == 3 && foe == 1){
+			System.out.println("SCISSORS VS ROCK: ROUND LOST");
+			j++;
+		}		
+		
+
+	}
+
+		
+}
+
+public int randomNumber() {
+	int result = (int) (Math.random() * 3) + 1;
+	
+	return result;
+}
+
+}
